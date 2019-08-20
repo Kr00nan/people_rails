@@ -1,2 +1,25 @@
-<h1>People#new</h1>
-<p>Find me in app/views/people/new.html.erb</p>
+<h1>New Person</h1>
+<%= form_for @person do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+
+  <%= f.label :age %>
+  <%= f.text_area :age %>
+
+  <%= f.label :gender %>
+  <%= f.text_area :gender %>
+
+  <%= f.label :hair_color %>
+  <%= f.text_area :hair_color %>
+
+  <%= f.label :eye_color %>
+  <%= f.text_area :eye_color %>
+
+  <%= f.label :alive, "This person is still living." %>
+  <%= f.check_box :alive %>
+
+  <%= f.submit %>
+<% end %>

@@ -11,6 +11,21 @@ class PeopleController < ApplicationController
     @person = Person.new
   end
 
+  def create
+    @person = Person.new(people_params)
+ 
+    if @person.save
+      redirect_to people_path
+    else
+      render :new
+    end
+  end
+ 
+  private
+  def people_params
+    params.require(:person).permit(:first_name, :last_name, :age, :gender, :hair_color, :eye_color, :alive)
+  end
+
   def update
   end
 
